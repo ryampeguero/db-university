@@ -16,13 +16,13 @@ WHERE
 
 -- 3. Selezionare tutti gli studenti che hanno più di 30 anni
 SELECT
-    *
+    date_of_birth
 FROM
     `students`
 WHERE
     YEAR(NOW()) - YEAR(`date_of_birth`) >= 30
-    AND MONTH(NOW()) - MONTH(`date_of_birth`) <= 0
-    AND DAY(NOW()) - DAY(`date_of_birth`) = 0;
+    AND MONTH(NOW()) >= MONTH(`date_of_birth`)
+    AND DAY(NOW()) - DAY(`date_of_birth`) >= 0;
 
 -- 4. Selezionare tutti i corsi del primo semestre del primo anno di un qualsiasi corso di laurea (286)
 SELECT
